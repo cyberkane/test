@@ -2,7 +2,7 @@ import pyparsing as ps
 import numpy as np
 from pyparsing import *
 
-file_name = 'taxi_test.xls'
+file_name = 'taxi.xls'
 
 def data_from_file():
     
