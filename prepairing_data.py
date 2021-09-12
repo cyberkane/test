@@ -1,25 +1,19 @@
-import pyparsing as ps
-import numpy as np
-from pyparsing import *
+import pandas as pd
+import random
 
-file_name = 'taxi.xls'
+file_name = 'taxi_formated.xlsx'
 
 def data_from_file():
-    
-    with open(file_name, encoding='utf-8') as file:
-        data = file.read().split('\n')
-    
-    data_list = []
+    data_frame  = pd.read_excel(file_name)
 
-    for i in range (len(data) - 1):
-        csv_value = OneOrMore(CharsNotIn(','))
-        csv_value.ignore(',')
-        data_string = list(csv_value.parseString(data[i]))
-        data_list.append(data_string)
+    return(data_frame)
 
-    data_list_names = data_list[0]
-    data_list.remove(data_list[0])
+def testing_data():
+    data = data_from_file()
+    data = data.sample(frac = 0.3)
+    return(data)
 
-    data_list = np.transpose(data_list)
+data = testing_data()
 
-    return(data_list_names, data_list)
+print(len(data))
+print(type(data))
