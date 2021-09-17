@@ -10,12 +10,12 @@ def testing_data():
 
 
 #запись наборов данных в отдельные файлы
-'''
+
 learn_data, test_data = testing_data()
 
 learn_data.to_excel('learn_data.xlsx')
 test_data.to_excel('test_data.xlsx')
-'''
+
 
 data_for_learning = 'learn_data.xlsx' #подготовленный файл learn_data.xlsx через prepairing_data.py
 data_for_testing = 'test_data.xlsx'   #подготовленный файл test_data.xlsx через prepairing_data.py
